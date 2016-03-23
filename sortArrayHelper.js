@@ -2,9 +2,12 @@
 
 function sortArrayHelper(field, order) {
     var length = arguments.length;
+    var fields, orders;
+    
     if(length === 0) {
         return (a, b) => (a < b && -1) || (a > b && 1) || 0;
     }
+
     if(length === 1) {
         switch(typeof field) {
             case 'number':
@@ -15,12 +18,13 @@ function sortArrayHelper(field, order) {
                 return (a, b) => (a[field] < b[field] && -1) || (a[field] > b[field] && 1) || 0;
         }
     }
+    
     if(length === 2 && typeof order === 'number') {
         return order < 0 ?
             ((a, b) => (a[field] < b[field] && 1) || (a[field] > b[field] && -1) || 0) :
             ((a, b) => (a[field] < b[field] && -1) || (a[field] > b[field] && 1) || 0);
     }
-    var fields, orders;
+    
     if(typeof field === 'object') {
         fields = Object.getOwnPropertyNames(field);
         orders = fields.map(key => field[key]);
