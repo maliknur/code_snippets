@@ -38,7 +38,16 @@ rl.on('line', function(line){
 	arrayOfInputs.push(tempArr);
 }).on('close', function() {
 
-	// output
-	console.log(arrayOfInputs);
+	// when input finished, call main function to work with inputs
+	main(arrayOfInputs);
+	
 
 });
+
+
+// main function where a user should write algorithm to solve a problem.
+function main(array) {
+
+	console.log(array);
+
+}
