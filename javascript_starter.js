@@ -1,3 +1,27 @@
+/**
+
+ A javascript starter  based on node.js for 
+ Coursera course on Data Structures and Algorithms
+ by University of California, San Diego & Higher School of Economics
+
+ Input:
+ 4 4
+ 1 2 
+ 4 1 
+ 2 3 
+ 3 1
+
+Ouput:
+ [ [ 4, 4 ], [ 1, 2 ], [ 4, 1 ], [ 2, 3 ] ]
+
+
+How to use:
+node javascript_starter.js
+in console line provide inputs, for each line press 'Enter',
+to run main function, press Ctrl+C to terminate console input.
+
+**/ 
+
 var arrayOfInputs = [];
 var readline = require('readline');
 var rl = readline.createInterface({
@@ -11,7 +35,10 @@ rl.on('line', function(line){
 	tempArr = tempArr.map(function(e){
 		return parseInt(e);
 	});
-	arr.push(tempArr);
+	arrayOfInputs.push(tempArr);
 }).on('close', function() {
-	console.log(arr);
+
+	// output
+	console.log(arrayOfInputs);
+
 });
